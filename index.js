@@ -87,13 +87,14 @@ app1.use(bodyParser.urlencoded({extended:true}))
 
 app1.post('/profile', upload.single('avatar'), function (req, res, next) {
  	// res.file('avatar');
- 	res.send('avatar');
+ 	res.send(req.file.originalName);
 })
 
 app1.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {
 	// req.files is array of photos files
 	// req.body will contain the text fields, if there were any
-	console.log(req.files);
+	//console.log(req.files);
+	res.send('Success')
   })
 
 

@@ -29,6 +29,21 @@ paranoid:true
 
 }
 )
+var image=db.sequelize.define('images',
+{
+		//attributes
+		id:{
+		type: db.Sequelize.INTEGER,
+		primaryKey:true,
+		autoIncrement: true,
+		allowNull:false
+	},
+	imageName:{
+	type: db.Sequelize.STRING,
+	allowNull:false
+}
+	
+})
 
  user.sync({force:false})
  .then(function(){
@@ -40,4 +55,4 @@ console.log(err)
 
  })
 
-module.exports = user;
+module.exports = {user, image};
