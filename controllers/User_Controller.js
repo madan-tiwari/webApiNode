@@ -2,7 +2,6 @@ var user = require('../models/UserModel.js')
 
 var bcrypt = require('bcrypt');
 
-
 function hashGen(req,res,next){
 saltRounds = 10; 
 //console.log('in has gen');
@@ -75,7 +74,7 @@ address:req.body.address
 res.status(201)
 res.json({
   satus:201,
-  message:"You have regitered"
+  message:"you have been successfully registered"
 })
 })
 .catch(function(err){
