@@ -244,11 +244,12 @@ res.status(200).send('sffdf')
 app1.use(function(err,req,res,next){
 
 console.log(err.message);
+res.status(500);
 res.json({
   status:500,
   message:err.message
 })
-res.send(err.message)
+//res.send(err.message)
 
 
 })
